@@ -4,7 +4,7 @@ import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello world, from Tornado")
+        self.write("Hello world, from Tornado - deployed with Azure DevOps pipelines")
 
 
 def make_app():
