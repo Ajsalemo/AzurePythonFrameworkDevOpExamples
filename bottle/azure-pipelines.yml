@@ -8,19 +8,19 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '8e327871-e92c-42b8-8482-9a6cf543076f'
+  azureServiceConnectionId: '<ARM CONNECTION ID>'
 
   # Web app name
-  webAppName: 'ansalemo-bottle-test'
+  webAppName: '<ENTER WEB APP NAME>'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'ansalemo-bottle-test'
+  environmentName: '<ENTER WEB APP NAME>'
 
   # Project root folder. Point to the folder containing manage.py file.
-  projectRoot: $(System.DefaultWorkingDirectory)/bottle
+  projectRoot: $(System.DefaultWorkingDirectory)
 
   # Python version: 3.8
   pythonVersion: '3.8'
@@ -80,7 +80,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : ansalemo-bottle-test'
+            displayName: 'Deploy Azure Web App : <ENTER WEB APP NAME>'
             inputs:
               appType: 'webAppLinux'
               RuntimeStack: 'PYTHON|3.8'
