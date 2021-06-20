@@ -7,7 +7,7 @@ import cherrypy
 class StringGenerator(object):
     @cherrypy.expose
     def index(self):
-        return "Hello world!"
+        return "Hello World, from CherryPy"
 
     @cherrypy.expose
     def generate(self, length=8):
@@ -15,5 +15,9 @@ class StringGenerator(object):
 
 
 if __name__ == '__main__':
-    cherrypy.config.update({ 'server.socket_port': 8000 })
+    cherrypy.config.update({ 
+        'environment': 'production',
+        'server.socket_host': '0.0.0.0', 
+        'server.socket_port': 8000 
+    })
     cherrypy.quickstart(StringGenerator())
