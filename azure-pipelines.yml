@@ -43,7 +43,8 @@ stages:
         source antenv/bin/activate
         python -m pip install --upgrade pip
         pip install setup
-        pip install -r requirements.txt
+        # We don't need to install web2py through pip
+        # So in that case, there isn't a need for a requirements.txt in this example
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
