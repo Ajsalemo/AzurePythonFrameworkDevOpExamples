@@ -8,19 +8,19 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'a30388d0-8bbe-476d-9b16-88e4eb86315f'
+  azureServiceConnectionId: '<ARM CONNECTION ID>'
 
   # Web app name
-  webAppName: 'ansalemo-hug-framework'
+  webAppName: '<ENTER WEBAPP NAME>'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'ansalemo-hug-framework'
+  environmentName: '<ENTER WEBAPP NAME>'
 
-  # Project root folder. Point to the folder containing manage.py file.
-  projectRoot: $(System.DefaultWorkingDirectory)/hug
+  # Project root folder. 
+  projectRoot: $(System.DefaultWorkingDirectory)
 
   # Python version: 3.8
   pythonVersion: '3.8'
@@ -80,7 +80,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : ansalemo-hug-framework'
+            displayName: 'Deploy Azure Web App : <ENTER WEBAPP NAME>'
             inputs:
               appType: 'webAppLinux'
               runtimeStack: 'PYTHON|3.8'
