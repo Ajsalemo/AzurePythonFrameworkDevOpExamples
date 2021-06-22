@@ -8,19 +8,19 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '2c9af191-72de-495f-acba-f250fe3f5577'
+  azureServiceConnectionId: '<ARM CONNECTION ID>'
 
   # Web app name
-  webAppName: 'ansalemo-dash-test'
+  webAppName: '<ENTER WEBAPP NAME>'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'ansalemo-dash-test'
+  environmentName: '<ENTER WEBAPP NAME>'
 
-  # Project root folder. Point to the folder containing manage.py file.
-  projectRoot: $(System.DefaultWorkingDirectory)/dash
+  # Project root folder. 
+  projectRoot: $(System.DefaultWorkingDirectory)
 
   # Python version: 3.8
   pythonVersion: '3.8'
@@ -80,7 +80,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : ansalemo-dash-test'
+            displayName: 'Deploy Azure Web App : <ENTER WEBAPP NAME>'
             inputs:
               appType: 'webAppLinux'
               runtimeStack: 'PYTHON|3.8'
