@@ -87,4 +87,4 @@ stages:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'gunicorn -k uvicorn.workers.UvicornWorker --bind=0.0.0.0 --timeout 600 app:app'
+              startUpCommand: 'hypercorn app:app'
